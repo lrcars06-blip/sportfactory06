@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/wp-content/(.*)", "destination": "/", "permanent": true },
+    { "source": "/wp-includes/(.*)", "destination": "/", "permanent": true },
+    { "source": "/wp-admin/(.*)", "destination": "/", "permanent": true },
+    { "source": "/wp-login.php", "destination": "/", "permanent": true },
+    { "source": "/feed", "destination": "/", "permanent": true },
+    { "source": "/category/(.*)", "destination": "/", "permanent": true },
+    { "source": "/sitemap_index.xml", "destination": "/sitemap.xml", "permanent": true },
+    { "source": "/mentions-legales/politique-de-confidentialite", "destination": "/politique-de-confidentialite", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/(.*)\\.(webp|png|jpg|ico|webmanifest|woff2)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=604800" } ] },
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+      { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+    ] }
+  ]
+}
